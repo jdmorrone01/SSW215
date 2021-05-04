@@ -3,42 +3,52 @@ import Header from './componets/Header';
 import Body from './componets/Body';
 import Button from 'react-bootstrap/Button';
 import firebase from "./firebase";
+import {BrowserRouter as Router,Route, Link} from "react-router-dom";
+import Generator from "./Generator";
+import Home from "./Home";
+
 
 
 function App() {
 
-  const [music, setMusic] = useState([]);
-  const [loading, setLoading] = useState(false);
+  // const [music, setMusic] = useState([]);
+  // const [loading, setLoading] = useState(false);
  
-  const ref = firebase.firestore().collection("music");
+  // const ref = firebase.firestore().collection("music");
 
-  function getMusic() {
-    setLoading(true);
-    ref.onSnapshot((querySnapshot) => {
-      const items = [];
-      querySnapshot.forEach((doc)=> {
-        items.push(doc.data());
-      });
-      setMusic(items);
-      setLoading(false);
-    });
-  }
+  // function getMusic() {
+  //   setLoading(true);
+  //   ref.onSnapshot((querySnapshot) => {
+  //     const items = [];
+  //     querySnapshot.forEach((doc)=> {
+  //       items.push(doc.data());
+  //     });
+  //     setMusic(items);
+  //     setLoading(false);
+  //   });
+  // }
 
-  useEffect(() =>{
-    getMusic();
-  }, []);
+  // useEffect(() =>{
+  //   getMusic();
+  // }, []);
 
-  if(loading)
-  {
-    return <h1>Working on your request</h1>
-  }
+
+  // if(loading)
+  // {
+  //   return <h1>Working on your request</h1>
+  // }
   return (
     <div className="App">
-      <Header title ="DuckTones"/>
+      {/* <Header title ="DuckTones"/>
       <Body words = "Tired of listening to the same music over an over? Looking for something new to spice up your playlist? Introducing DuckTunes!"/>
       <Body words = "DuckTunes finds new music for you based on the songs you already know and love. Simply input your favorite songs and DuckTunes will give amazing suggestions for new music!"/>
-      <Button href="Generator">Generator</Button>
-      {music.map((song) => (
+  <Button href="./Generator">Generator</Button>*/}
+      <Router>
+        <Route  path = "/" exact component ={Home}/>
+        <Route path = "/Generator" component = {Generator}/>
+
+      </Router> 
+      {/* {music.map((song) => (
         <div key ={song.id}>
           {song.genre}
           <p>{song.artist}</p>
@@ -46,7 +56,7 @@ function App() {
           
           </div>
 
-      ))}
+      ))} */}
 
    </div>
   );
