@@ -156,7 +156,7 @@ useEffect(() =>{
 
       </Router> 
       <ButtonGroup>
-      <Button  onClick = {Test}>Country</Button>
+      <Button  onClick = {Test}>Find</Button>
       <Button onClick = {Home}>Home</Button>
       </ButtonGroup>
       {/* {music.map((song) => (
