@@ -6,6 +6,12 @@ import firebase from "./firebase";
 import {BrowserRouter as Router,Route, Link} from "react-router-dom";
 import Generator from "./Generator";
 import Home from "./Home";
+import './index.css'
+import Country from './country';
+import Hiphop from './hip-hop';
+import Jazz from './jazz';
+import Pop from './pop';
+import Rock from './rock';
 
 
 
@@ -43,9 +49,11 @@ function App() {
       <Body words = "Tired of listening to the same music over an over? Looking for something new to spice up your playlist? Introducing DuckTunes!"/>
       <Body words = "DuckTunes finds new music for you based on the songs you already know and love. Simply input your favorite songs and DuckTunes will give amazing suggestions for new music!"/>
   <Button href="./Generator">Generator</Button>*/}
+  <Header title ="DuckTones"/>
       <Router>
         <Route  path = "/" exact component ={Home}/>
         <Route path = "/Generator" component = {Generator}/>
+        {/* <Route  path = "/country" exact component ={Country}/> */}
 
       </Router> 
       {/* {music.map((song) => (
