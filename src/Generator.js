@@ -98,7 +98,7 @@ useEffect(() =>{
   function handleChange(event)
   {
     
-    alert(event.value);
+    
     if( event.value== "Rock")
     {
       const temp='/Generator/rock';

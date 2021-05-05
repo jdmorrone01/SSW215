@@ -49,7 +49,8 @@ function App() {
       <Body words = "Tired of listening to the same music over an over? Looking for something new to spice up your playlist? Introducing DuckTunes!"/>
       <Body words = "DuckTunes finds new music for you based on the songs you already know and love. Simply input your favorite songs and DuckTunes will give amazing suggestions for new music!"/>
   <Button href="./Generator">Generator</Button>*/}
-  <Header title ="DuckTones"/>
+  <Header title ="DuckTunes"/>
+  <img src="/rockstar-duck.png" width="200" height="200" style={{textAlign: "center"}}/>
       <Router>
         <Route  path = "/" exact component ={Home}/>
         <Route path = "/Generator" component = {Generator}/>
