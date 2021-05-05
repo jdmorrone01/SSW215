@@ -155,10 +155,10 @@ useEffect(() =>{
         
 
       </Router> 
-      <ButtonGroup>
-      <Button  onClick = {Test}>Find</Button>
-      <Button onClick = {Home}>Home</Button>
-      </ButtonGroup>
+      
+      <Button  onClick = {Test} className = {"button"}>Find</Button>
+      <Button onClick = {Home} className = {"button"}>Home</Button>
+      
       {/* {music.map((song) => (
         <div key ={song.id}>
           <h2>{song.artist}</h2>
