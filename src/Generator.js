@@ -16,7 +16,7 @@ import Select from 'react-select';
 
 
 function Generator() {
-const location = '';
+const [genre,setGenre] = useState('');
 const options = [];
   
   
@@ -95,34 +95,41 @@ useEffect(() =>{
 
 
 
-  function handleChange(genre)
+  function handleChange(event)
   {
-    alert(genre);
-    if( genre == "Rock")
+    
+    alert(event.value);
+    if( event.value== "Rock")
     {
-      location = '/Generator/rock';
+      const temp='/Generator/rock';
+      setGenre( temp);
     }
-    else if( genre == "Pop")
+    else if( event.value== "Pop")
     {
-      location = '/Generator/pop';
+      const temp = '/Generator/pop';
+      setGenre( temp);
     }
-    else if( genre == "Country")
+    else if( event.value == "Country")
     {
-      location = '/Generator/country';
+      const temp= '/Generator/country';
+      setGenre( temp);
     }
-    else if( genre == "Hiphop")
+    else if( event.value == "Hiphop")
     {
-      location = '/Generator/hip-hop';
+      const temp = '/Generator/hip-hop';
+      setGenre( temp);
     }
-    else if( genre == "Jazz")
+    else if(event.value == "Jazz")
     {
-      location = '/Generator/jazz';
+      const temp = '/Generator/jazz';
+      setGenre( temp);
     }
+    
 
   }
   function Test(){
     
-    window.location.href = location;
+    window.location.href = genre;
   
   }
   function Home()
@@ -136,9 +143,9 @@ useEffect(() =>{
   return (
     <div className="App">
      
-      <Body words = "Please type in a song you might like!"/>
+      <Body words = "Please type in a song you like!"/>
      
-      <Select options = {options} />
+      <Select options = {options} onChange = {val=>val? handleChange(val):false} />
       <Router>
         <Route  path = "/Generator/country" exact component ={Country}/>
         <Route  path = "/Generator/pop" exact component ={Pop}/>

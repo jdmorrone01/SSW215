@@ -53,7 +53,7 @@ function App() {
       <Router>
         <Route  path = "/" exact component ={Home}/>
         <Route path = "/Generator" component = {Generator}/>
-        {/* <Route  path = "/country" exact component ={Country}/> */}
+        
 
       </Router> 
       {/* {music.map((song) => (
